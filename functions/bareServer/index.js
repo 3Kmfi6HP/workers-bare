@@ -4,6 +4,7 @@
  */
 const MIRROR_URL = 'github.com';
 const BAN_REGION = ['IN', 'KP'];
+
 /**
  * @param {Promise} handleRequest
  */
@@ -103,7 +104,7 @@ async function cleanupDatabase(database) {
 }
 const bs = 'bareServer';
 
-var httpErrors = {exports: {}};
+var httpErrors = { exports: {} };
 
 /*!
  * depd
@@ -122,12 +123,12 @@ var browser = depd;
  * Create deprecate for namespace in caller.
  */
 
-function depd (namespace) {
+function depd(namespace) {
   if (!namespace) {
     throw new TypeError('argument namespace is required')
   }
 
-  function deprecate (message) {
+  function deprecate(message) {
     // no-op in browser
   }
 
@@ -150,7 +151,7 @@ function depd (namespace) {
  * validation.
  */
 
-function wrapfunction (fn, message) {
+function wrapfunction(fn, message) {
   if (typeof fn !== 'function') {
     throw new TypeError('argument fn must be a function')
   }
@@ -165,7 +166,7 @@ function wrapfunction (fn, message) {
  * validation.
  */
 
-function wrapproperty (obj, prop, message) {
+function wrapproperty(obj, prop, message) {
   if (!obj || (typeof obj !== 'object' && typeof obj !== 'function')) {
     throw new TypeError('argument obj must be object')
   }
@@ -184,12 +185,12 @@ function wrapproperty (obj, prop, message) {
 /* eslint no-proto: 0 */
 var setprototypeof = Object.setPrototypeOf || ({ __proto__: [] } instanceof Array ? setProtoOf : mixinProperties);
 
-function setProtoOf (obj, proto) {
+function setProtoOf(obj, proto) {
   obj.__proto__ = proto;
   return obj
 }
 
-function mixinProperties (obj, proto) {
+function mixinProperties(obj, proto) {
   for (var prop in proto) {
     if (!Object.prototype.hasOwnProperty.call(obj, prop)) {
       obj[prop] = proto[prop];
@@ -199,69 +200,69 @@ function mixinProperties (obj, proto) {
 }
 
 var require$$0 = {
-	"100": "Continue",
-	"101": "Switching Protocols",
-	"102": "Processing",
-	"103": "Early Hints",
-	"200": "OK",
-	"201": "Created",
-	"202": "Accepted",
-	"203": "Non-Authoritative Information",
-	"204": "No Content",
-	"205": "Reset Content",
-	"206": "Partial Content",
-	"207": "Multi-Status",
-	"208": "Already Reported",
-	"226": "IM Used",
-	"300": "Multiple Choices",
-	"301": "Moved Permanently",
-	"302": "Found",
-	"303": "See Other",
-	"304": "Not Modified",
-	"305": "Use Proxy",
-	"307": "Temporary Redirect",
-	"308": "Permanent Redirect",
-	"400": "Bad Request",
-	"401": "Unauthorized",
-	"402": "Payment Required",
-	"403": "Forbidden",
-	"404": "Not Found",
-	"405": "Method Not Allowed",
-	"406": "Not Acceptable",
-	"407": "Proxy Authentication Required",
-	"408": "Request Timeout",
-	"409": "Conflict",
-	"410": "Gone",
-	"411": "Length Required",
-	"412": "Precondition Failed",
-	"413": "Payload Too Large",
-	"414": "URI Too Long",
-	"415": "Unsupported Media Type",
-	"416": "Range Not Satisfiable",
-	"417": "Expectation Failed",
-	"418": "I'm a Teapot",
-	"421": "Misdirected Request",
-	"422": "Unprocessable Entity",
-	"423": "Locked",
-	"424": "Failed Dependency",
-	"425": "Too Early",
-	"426": "Upgrade Required",
-	"428": "Precondition Required",
-	"429": "Too Many Requests",
-	"431": "Request Header Fields Too Large",
-	"451": "Unavailable For Legal Reasons",
-	"500": "Internal Server Error",
-	"501": "Not Implemented",
-	"502": "Bad Gateway",
-	"503": "Service Unavailable",
-	"504": "Gateway Timeout",
-	"505": "HTTP Version Not Supported",
-	"506": "Variant Also Negotiates",
-	"507": "Insufficient Storage",
-	"508": "Loop Detected",
-	"509": "Bandwidth Limit Exceeded",
-	"510": "Not Extended",
-	"511": "Network Authentication Required"
+  "100": "Continue",
+  "101": "Switching Protocols",
+  "102": "Processing",
+  "103": "Early Hints",
+  "200": "OK",
+  "201": "Created",
+  "202": "Accepted",
+  "203": "Non-Authoritative Information",
+  "204": "No Content",
+  "205": "Reset Content",
+  "206": "Partial Content",
+  "207": "Multi-Status",
+  "208": "Already Reported",
+  "226": "IM Used",
+  "300": "Multiple Choices",
+  "301": "Moved Permanently",
+  "302": "Found",
+  "303": "See Other",
+  "304": "Not Modified",
+  "305": "Use Proxy",
+  "307": "Temporary Redirect",
+  "308": "Permanent Redirect",
+  "400": "Bad Request",
+  "401": "Unauthorized",
+  "402": "Payment Required",
+  "403": "Forbidden",
+  "404": "Not Found",
+  "405": "Method Not Allowed",
+  "406": "Not Acceptable",
+  "407": "Proxy Authentication Required",
+  "408": "Request Timeout",
+  "409": "Conflict",
+  "410": "Gone",
+  "411": "Length Required",
+  "412": "Precondition Failed",
+  "413": "Payload Too Large",
+  "414": "URI Too Long",
+  "415": "Unsupported Media Type",
+  "416": "Range Not Satisfiable",
+  "417": "Expectation Failed",
+  "418": "I'm a Teapot",
+  "421": "Misdirected Request",
+  "422": "Unprocessable Entity",
+  "423": "Locked",
+  "424": "Failed Dependency",
+  "425": "Too Early",
+  "426": "Upgrade Required",
+  "428": "Precondition Required",
+  "429": "Too Many Requests",
+  "431": "Request Header Fields Too Large",
+  "451": "Unavailable For Legal Reasons",
+  "500": "Internal Server Error",
+  "501": "Not Implemented",
+  "502": "Bad Gateway",
+  "503": "Service Unavailable",
+  "504": "Gateway Timeout",
+  "505": "HTTP Version Not Supported",
+  "506": "Variant Also Negotiates",
+  "507": "Insufficient Storage",
+  "508": "Loop Detected",
+  "509": "Bandwidth Limit Exceeded",
+  "510": "Not Extended",
+  "511": "Network Authentication Required"
 };
 
 /*!
@@ -324,10 +325,10 @@ status.retry = {
  * @private
  */
 
-function createMessageToStatusCodeMap (codes) {
+function createMessageToStatusCodeMap(codes) {
   var map = {};
 
-  Object.keys(codes).forEach(function forEachCode (code) {
+  Object.keys(codes).forEach(function forEachCode(code) {
     var message = codes[code];
     var status = Number(code);
 
@@ -343,8 +344,8 @@ function createMessageToStatusCodeMap (codes) {
  * @private
  */
 
-function createStatusCodeList (codes) {
-  return Object.keys(codes).map(function mapCode (code) {
+function createStatusCodeList(codes) {
+  return Object.keys(codes).map(function mapCode(code) {
     return Number(code)
   })
 }
@@ -354,7 +355,7 @@ function createStatusCodeList (codes) {
  * @private
  */
 
-function getStatusCode (message) {
+function getStatusCode(message) {
   var msg = message.toLowerCase();
 
   if (!Object.prototype.hasOwnProperty.call(status.code, msg)) {
@@ -369,7 +370,7 @@ function getStatusCode (message) {
  * @private
  */
 
-function getStatusMessage (code) {
+function getStatusMessage(code) {
   if (!Object.prototype.hasOwnProperty.call(status.message, code)) {
     throw new Error('invalid status code: ' + code)
   }
@@ -391,7 +392,7 @@ function getStatusMessage (code) {
  * @public
  */
 
-function status (code) {
+function status(code) {
   if (typeof code === 'number') {
     return getStatusMessage(code)
   }
@@ -409,7 +410,7 @@ function status (code) {
   return getStatusCode(code)
 }
 
-var inherits_browser = {exports: {}};
+var inherits_browser = { exports: {} };
 
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
@@ -431,7 +432,7 @@ if (typeof Object.create === 'function') {
   inherits_browser.exports = function inherits(ctor, superCtor) {
     if (superCtor) {
       ctor.super_ = superCtor;
-      var TempCtor = function () {};
+      var TempCtor = function () { };
       TempCtor.prototype = superCtor.prototype;
       ctor.prototype = new TempCtor();
       ctor.prototype.constructor = ctor;
@@ -460,7 +461,7 @@ var toidentifier = toIdentifier;
  * @public
  */
 
-function toIdentifier (str) {
+function toIdentifier(str) {
   return str
     .split(' ')
     .map(function (token) {
@@ -479,283 +480,283 @@ function toIdentifier (str) {
 
 (function (module) {
 
-	/**
-	 * Module dependencies.
-	 * @private
-	 */
+  /**
+   * Module dependencies.
+   * @private
+   */
 
-	browser('http-errors');
-	var setPrototypeOf = setprototypeof;
-	var statuses$1 = statuses;
-	var inherits = inherits_browser.exports;
-	var toIdentifier = toidentifier;
+  browser('http-errors');
+  var setPrototypeOf = setprototypeof;
+  var statuses$1 = statuses;
+  var inherits = inherits_browser.exports;
+  var toIdentifier = toidentifier;
 
-	/**
-	 * Module exports.
-	 * @public
-	 */
+  /**
+   * Module exports.
+   * @public
+   */
 
-	module.exports = createError;
-	module.exports.HttpError = createHttpErrorConstructor();
-	module.exports.isHttpError = createIsHttpErrorFunction(module.exports.HttpError);
+  module.exports = createError;
+  module.exports.HttpError = createHttpErrorConstructor();
+  module.exports.isHttpError = createIsHttpErrorFunction(module.exports.HttpError);
 
-	// Populate exports for all constructors
-	populateConstructorExports(module.exports, statuses$1.codes, module.exports.HttpError);
+  // Populate exports for all constructors
+  populateConstructorExports(module.exports, statuses$1.codes, module.exports.HttpError);
 
-	/**
-	 * Get the code class of a status code.
-	 * @private
-	 */
+  /**
+   * Get the code class of a status code.
+   * @private
+   */
 
-	function codeClass (status) {
-	  return Number(String(status).charAt(0) + '00')
-	}
+  function codeClass(status) {
+    return Number(String(status).charAt(0) + '00')
+  }
 
-	/**
-	 * Create a new HTTP Error.
-	 *
-	 * @returns {Error}
-	 * @public
-	 */
+  /**
+   * Create a new HTTP Error.
+   *
+   * @returns {Error}
+   * @public
+   */
 
-	function createError () {
-	  // so much arity going on ~_~
-	  var err;
-	  var msg;
-	  var status = 500;
-	  var props = {};
-	  for (var i = 0; i < arguments.length; i++) {
-	    var arg = arguments[i];
-	    var type = typeof arg;
-	    if (type === 'object' && arg instanceof Error) {
-	      err = arg;
-	      status = err.status || err.statusCode || status;
-	    } else if (type === 'number' && i === 0) {
-	      status = arg;
-	    } else if (type === 'string') {
-	      msg = arg;
-	    } else if (type === 'object') {
-	      props = arg;
-	    } else {
-	      throw new TypeError('argument #' + (i + 1) + ' unsupported type ' + type)
-	    }
-	  }
+  function createError() {
+    // so much arity going on ~_~
+    var err;
+    var msg;
+    var status = 500;
+    var props = {};
+    for (var i = 0; i < arguments.length; i++) {
+      var arg = arguments[i];
+      var type = typeof arg;
+      if (type === 'object' && arg instanceof Error) {
+        err = arg;
+        status = err.status || err.statusCode || status;
+      } else if (type === 'number' && i === 0) {
+        status = arg;
+      } else if (type === 'string') {
+        msg = arg;
+      } else if (type === 'object') {
+        props = arg;
+      } else {
+        throw new TypeError('argument #' + (i + 1) + ' unsupported type ' + type)
+      }
+    }
 
-	  if (typeof status !== 'number' ||
-	    (!statuses$1.message[status] && (status < 400 || status >= 600))) {
-	    status = 500;
-	  }
+    if (typeof status !== 'number' ||
+      (!statuses$1.message[status] && (status < 400 || status >= 600))) {
+      status = 500;
+    }
 
-	  // constructor
-	  var HttpError = createError[status] || createError[codeClass(status)];
+    // constructor
+    var HttpError = createError[status] || createError[codeClass(status)];
 
-	  if (!err) {
-	    // create error
-	    err = HttpError
-	      ? new HttpError(msg)
-	      : new Error(msg || statuses$1.message[status]);
-	    Error.captureStackTrace(err, createError);
-	  }
+    if (!err) {
+      // create error
+      err = HttpError
+        ? new HttpError(msg)
+        : new Error(msg || statuses$1.message[status]);
+      Error.captureStackTrace(err, createError);
+    }
 
-	  if (!HttpError || !(err instanceof HttpError) || err.status !== status) {
-	    // add properties to generic error
-	    err.expose = status < 500;
-	    err.status = err.statusCode = status;
-	  }
+    if (!HttpError || !(err instanceof HttpError) || err.status !== status) {
+      // add properties to generic error
+      err.expose = status < 500;
+      err.status = err.statusCode = status;
+    }
 
-	  for (var key in props) {
-	    if (key !== 'status' && key !== 'statusCode') {
-	      err[key] = props[key];
-	    }
-	  }
+    for (var key in props) {
+      if (key !== 'status' && key !== 'statusCode') {
+        err[key] = props[key];
+      }
+    }
 
-	  return err
-	}
+    return err
+  }
 
-	/**
-	 * Create HTTP error abstract base class.
-	 * @private
-	 */
+  /**
+   * Create HTTP error abstract base class.
+   * @private
+   */
 
-	function createHttpErrorConstructor () {
-	  function HttpError () {
-	    throw new TypeError('cannot construct abstract class')
-	  }
+  function createHttpErrorConstructor() {
+    function HttpError() {
+      throw new TypeError('cannot construct abstract class')
+    }
 
-	  inherits(HttpError, Error);
+    inherits(HttpError, Error);
 
-	  return HttpError
-	}
+    return HttpError
+  }
 
-	/**
-	 * Create a constructor for a client error.
-	 * @private
-	 */
+  /**
+   * Create a constructor for a client error.
+   * @private
+   */
 
-	function createClientErrorConstructor (HttpError, name, code) {
-	  var className = toClassName(name);
+  function createClientErrorConstructor(HttpError, name, code) {
+    var className = toClassName(name);
 
-	  function ClientError (message) {
-	    // create the error object
-	    var msg = message != null ? message : statuses$1.message[code];
-	    var err = new Error(msg);
+    function ClientError(message) {
+      // create the error object
+      var msg = message != null ? message : statuses$1.message[code];
+      var err = new Error(msg);
 
-	    // capture a stack trace to the construction point
-	    Error.captureStackTrace(err, ClientError);
+      // capture a stack trace to the construction point
+      Error.captureStackTrace(err, ClientError);
 
-	    // adjust the [[Prototype]]
-	    setPrototypeOf(err, ClientError.prototype);
+      // adjust the [[Prototype]]
+      setPrototypeOf(err, ClientError.prototype);
 
-	    // redefine the error message
-	    Object.defineProperty(err, 'message', {
-	      enumerable: true,
-	      configurable: true,
-	      value: msg,
-	      writable: true
-	    });
+      // redefine the error message
+      Object.defineProperty(err, 'message', {
+        enumerable: true,
+        configurable: true,
+        value: msg,
+        writable: true
+      });
 
-	    // redefine the error name
-	    Object.defineProperty(err, 'name', {
-	      enumerable: false,
-	      configurable: true,
-	      value: className,
-	      writable: true
-	    });
+      // redefine the error name
+      Object.defineProperty(err, 'name', {
+        enumerable: false,
+        configurable: true,
+        value: className,
+        writable: true
+      });
 
-	    return err
-	  }
+      return err
+    }
 
-	  inherits(ClientError, HttpError);
-	  nameFunc(ClientError, className);
+    inherits(ClientError, HttpError);
+    nameFunc(ClientError, className);
 
-	  ClientError.prototype.status = code;
-	  ClientError.prototype.statusCode = code;
-	  ClientError.prototype.expose = true;
+    ClientError.prototype.status = code;
+    ClientError.prototype.statusCode = code;
+    ClientError.prototype.expose = true;
 
-	  return ClientError
-	}
+    return ClientError
+  }
 
-	/**
-	 * Create function to test is a value is a HttpError.
-	 * @private
-	 */
+  /**
+   * Create function to test is a value is a HttpError.
+   * @private
+   */
 
-	function createIsHttpErrorFunction (HttpError) {
-	  return function isHttpError (val) {
-	    if (!val || typeof val !== 'object') {
-	      return false
-	    }
+  function createIsHttpErrorFunction(HttpError) {
+    return function isHttpError(val) {
+      if (!val || typeof val !== 'object') {
+        return false
+      }
 
-	    if (val instanceof HttpError) {
-	      return true
-	    }
+      if (val instanceof HttpError) {
+        return true
+      }
 
-	    return val instanceof Error &&
-	      typeof val.expose === 'boolean' &&
-	      typeof val.statusCode === 'number' && val.status === val.statusCode
-	  }
-	}
+      return val instanceof Error &&
+        typeof val.expose === 'boolean' &&
+        typeof val.statusCode === 'number' && val.status === val.statusCode
+    }
+  }
 
-	/**
-	 * Create a constructor for a server error.
-	 * @private
-	 */
+  /**
+   * Create a constructor for a server error.
+   * @private
+   */
 
-	function createServerErrorConstructor (HttpError, name, code) {
-	  var className = toClassName(name);
+  function createServerErrorConstructor(HttpError, name, code) {
+    var className = toClassName(name);
 
-	  function ServerError (message) {
-	    // create the error object
-	    var msg = message != null ? message : statuses$1.message[code];
-	    var err = new Error(msg);
+    function ServerError(message) {
+      // create the error object
+      var msg = message != null ? message : statuses$1.message[code];
+      var err = new Error(msg);
 
-	    // capture a stack trace to the construction point
-	    Error.captureStackTrace(err, ServerError);
+      // capture a stack trace to the construction point
+      Error.captureStackTrace(err, ServerError);
 
-	    // adjust the [[Prototype]]
-	    setPrototypeOf(err, ServerError.prototype);
+      // adjust the [[Prototype]]
+      setPrototypeOf(err, ServerError.prototype);
 
-	    // redefine the error message
-	    Object.defineProperty(err, 'message', {
-	      enumerable: true,
-	      configurable: true,
-	      value: msg,
-	      writable: true
-	    });
+      // redefine the error message
+      Object.defineProperty(err, 'message', {
+        enumerable: true,
+        configurable: true,
+        value: msg,
+        writable: true
+      });
 
-	    // redefine the error name
-	    Object.defineProperty(err, 'name', {
-	      enumerable: false,
-	      configurable: true,
-	      value: className,
-	      writable: true
-	    });
+      // redefine the error name
+      Object.defineProperty(err, 'name', {
+        enumerable: false,
+        configurable: true,
+        value: className,
+        writable: true
+      });
 
-	    return err
-	  }
+      return err
+    }
 
-	  inherits(ServerError, HttpError);
-	  nameFunc(ServerError, className);
+    inherits(ServerError, HttpError);
+    nameFunc(ServerError, className);
 
-	  ServerError.prototype.status = code;
-	  ServerError.prototype.statusCode = code;
-	  ServerError.prototype.expose = false;
+    ServerError.prototype.status = code;
+    ServerError.prototype.statusCode = code;
+    ServerError.prototype.expose = false;
 
-	  return ServerError
-	}
+    return ServerError
+  }
 
-	/**
-	 * Set the name of a function, if possible.
-	 * @private
-	 */
+  /**
+   * Set the name of a function, if possible.
+   * @private
+   */
 
-	function nameFunc (func, name) {
-	  var desc = Object.getOwnPropertyDescriptor(func, 'name');
+  function nameFunc(func, name) {
+    var desc = Object.getOwnPropertyDescriptor(func, 'name');
 
-	  if (desc && desc.configurable) {
-	    desc.value = name;
-	    Object.defineProperty(func, 'name', desc);
-	  }
-	}
+    if (desc && desc.configurable) {
+      desc.value = name;
+      Object.defineProperty(func, 'name', desc);
+    }
+  }
 
-	/**
-	 * Populate the exports object with constructors for every error class.
-	 * @private
-	 */
+  /**
+   * Populate the exports object with constructors for every error class.
+   * @private
+   */
 
-	function populateConstructorExports (exports, codes, HttpError) {
-	  codes.forEach(function forEachCode (code) {
-	    var CodeError;
-	    var name = toIdentifier(statuses$1.message[code]);
+  function populateConstructorExports(exports, codes, HttpError) {
+    codes.forEach(function forEachCode(code) {
+      var CodeError;
+      var name = toIdentifier(statuses$1.message[code]);
 
-	    switch (codeClass(code)) {
-	      case 400:
-	        CodeError = createClientErrorConstructor(HttpError, name, code);
-	        break
-	      case 500:
-	        CodeError = createServerErrorConstructor(HttpError, name, code);
-	        break
-	    }
+      switch (codeClass(code)) {
+        case 400:
+          CodeError = createClientErrorConstructor(HttpError, name, code);
+          break
+        case 500:
+          CodeError = createServerErrorConstructor(HttpError, name, code);
+          break
+      }
 
-	    if (CodeError) {
-	      // export the constructor
-	      exports[code] = CodeError;
-	      exports[name] = CodeError;
-	    }
-	  });
-	}
+      if (CodeError) {
+        // export the constructor
+        exports[code] = CodeError;
+        exports[name] = CodeError;
+      }
+    });
+  }
 
-	/**
-	 * Get a class name from a name identifier.
-	 * @private
-	 */
+  /**
+   * Get a class name from a name identifier.
+   * @private
+   */
 
-	function toClassName (name) {
-	  return name.substr(-5) !== 'Error'
-	    ? name + 'Error'
-	    : name
-	}
-} (httpErrors));
+  function toClassName(name) {
+    return name.substr(-5) !== 'Error'
+      ? name + 'Error'
+      : name
+  }
+}(httpErrors));
 
 var createHttpError = httpErrors.exports;
 
@@ -1066,7 +1067,7 @@ const tunnelRequest$1 = async request => {
   const responseHeaders = new Headers();
 
   for (const [header, value] of response.headers) {
-    if (header === 'content-encoding' || header === 'x-content-encoding') responseHeaders.set('content-encoding', value);else if (header === 'content-length') responseHeaders.set('content-length', value);
+    if (header === 'content-encoding' || header === 'x-content-encoding') responseHeaders.set('content-encoding', value); else if (header === 'content-length') responseHeaders.set('content-length', value);
   }
 
   responseHeaders.set('x-bare-headers', JSON.stringify(Object.fromEntries(response.headers)));
@@ -1564,7 +1565,8 @@ function createBareServer(directory, init = {}) {
     cleanup.push(() => clearInterval(interval));
   }
 
-  const server = new Server(directory, { ...init,
+  const server = new Server(directory, {
+    ...init,
     database: new JSONDatabaseAdapter(init.database)
   });
   registerV1(server);
@@ -1575,11 +1577,7 @@ function createBareServer(directory, init = {}) {
   return server;
 }
 
-const kvDB = new KVAdapter(BARE);
-const bare = createBareServer(`/${bs}/`, {
-  logErrors: true,
-  database: kvDB
-});
+
 
 // addEventListener('fetch', event => {
 //   cleanupDatabase(kvDB);
@@ -1591,7 +1589,12 @@ const bare = createBareServer(`/${bs}/`, {
 //   }
 // });
 
-export function onRequest(context, event) {
+export function onRequest(context, event, env) {
+  const kvDB = new KVAdapter(env.BARE);
+  const bare = createBareServer(`/${bs}/`, {
+    logErrors: true,
+    database: kvDB
+  });
   cleanupDatabase(kvDB);
 
   if (bare.shouldRoute(event.request)) {

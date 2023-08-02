@@ -1,0 +1,4 @@
+compatibility-date = 2023-08-02
+kv_namespaces = [
+    { binding = "BARE", id = "4738adb2cac0442b9f78cd0a028bcc70", preview_id = "6344e0ec6530465ba8388ce91529b5df" }
+]
