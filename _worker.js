@@ -1588,18 +1588,19 @@ function createBareServer(directory, init = {}) {
 //     event.respondWith(handleRequest(event.request));
 //   }
 // });
+export default {
+  async fetch(request, env, ctx, event) {
+    const kvDB = new KVAdapter(env.BARE);
+    const bare = createBareServer(`/${bs}/`, {
+      logErrors: true,
+      database: env.BARE
+    });
+    cleanupDatabase(kvDB);
 
-export function onRequest(context, event, env) {
-  const kvDB = new KVAdapter(env.BARE);
-  const bare = createBareServer(`/${bs}/`, {
-    logErrors: true,
-    database: env.BARE
-  });
-  cleanupDatabase(kvDB);
-
-  if (bare.shouldRoute(event.request)) {
-    event.respondWith(bare.routeRequest(event.request));
-  } else {
-    event.respondWith(handleRequest(event.request));
-  }
-}
+    if (bare.shouldRoute(event.request)) {
+      event.respondWith(bare.routeRequest(event.request));
+    } else {
+      event.respondWith(handleRequest(event.request));
+    }
+  },
+};
