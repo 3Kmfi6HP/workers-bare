@@ -1598,9 +1598,9 @@ export default {
     cleanupDatabase(kvDB);
 
     if (bare.shouldRoute(request)) {
-      event.respondWith(bare.routeRequest(request));
+      ctx.respondWith(bare.routeRequest(request));
     } else {
-      event.respondWith(handleRequest(request));
+      ctx.respondWith(handleRequest(request));
     }
   },
 };
