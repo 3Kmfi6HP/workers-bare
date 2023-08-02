@@ -1580,7 +1580,18 @@ const bare = createBareServer(`/${bs}/`, {
   logErrors: true,
   database: kvDB
 });
-addEventListener('fetch', event => {
+
+// addEventListener('fetch', event => {
+//   cleanupDatabase(kvDB);
+
+//   if (bare.shouldRoute(event.request)) {
+//     event.respondWith(bare.routeRequest(event.request));
+//   } else {
+//     event.respondWith(handleRequest(event.request));
+//   }
+// });
+
+export function onRequest(context, event) {
   cleanupDatabase(kvDB);
 
   if (bare.shouldRoute(event.request)) {
@@ -1588,4 +1599,4 @@ addEventListener('fetch', event => {
   } else {
     event.respondWith(handleRequest(event.request));
   }
-});
+}
