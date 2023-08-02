@@ -1593,7 +1593,7 @@ export function onRequest(context, event, env) {
   const kvDB = new KVAdapter(env.BARE);
   const bare = createBareServer(`/${bs}/`, {
     logErrors: true,
-    database: kvDB
+    database: env.BARE
   });
   cleanupDatabase(kvDB);
 
