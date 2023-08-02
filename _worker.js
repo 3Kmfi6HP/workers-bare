@@ -1597,10 +1597,10 @@ export default {
     });
     cleanupDatabase(kvDB);
 
-    if (bare.shouldRoute(event.request)) {
-      event.respondWith(bare.routeRequest(event.request));
+    if (bare.shouldRoute(request)) {
+      event.respondWith(bare.routeRequest(request));
     } else {
-      event.respondWith(handleRequest(event.request));
+      event.respondWith(handleRequest(request));
     }
   },
 };
